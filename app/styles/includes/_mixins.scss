@@ -1,0 +1,18 @@
+$startX: -10px;
+$startY: -400px;
+
+$cardWidth: 172px;
+$cardHeight: 240px;
+
+$margin: 10px;
+
+@mixin cards {
+    $cardX: 0;
+    $cardY: 0;
+    
+    @for $item from 0 through 23 {
+        $cardX: $startX - ($item * ($cardWidth + $margin));
+        $cardY: $startY;
+      .item-#{$item}:before { background-position: $cardX $cardY};
+    }
+}
